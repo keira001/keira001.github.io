@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+//相关基础配置
+$lte7:          false !default;     //是否兼容IE6-7
+
+//font相关
+$baseFontSize:   14px !default;
+$baseLineHeight: 1.5 !default;
+$baseFontFamily: 'Helvetica Neue',Helvetica,'Lucida Grande',Arial,'Hiragino Sans GB',微软雅黑,'WenQuanYi Micro Hei',STHeiti,SimSun,sans-serif !default;
+$fontCn:         "SimSun"; //宋体
+$fontYaHei:      "Microsoft Yahei"; //微软雅黑
+$fontHeiTi:      "SimHei"; //黑体
+
+//基本颜色
+$black:       #000 !default;
+$grayDarker:  #333 !default;
+$grayDark:    #999 !default;
+$gray:        #ccc !default;
+$grayLight:   #f5f5f5 !default;
+$white:       #fff !default;
+
+$red:         #c30 !default;
+$bule:        #00a3cf !default;
+$blueDark:    #0064cd !default;
+$orange:      #f47837 !default;
+$yellow:      #ffc40d !default;
+$pink:        #c3325f !default;
+
+$primary:     #0078e7 !default; //主色
+
+//link
+//如果只有一个值则滑过的值为这个值的darken 5%，如果有两个值则第二个值为滑过的值
+$linkColor:   #08c !default;
+
+//scaffolding
+$bodyBgColor:  #e0e0e0 !default;
+$textColor:    $grayDarker !default;

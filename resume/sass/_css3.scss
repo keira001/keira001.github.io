@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+//各个浏览器的属性前缀，true表示开启，false表示不开启
+$isWebkit:         true !default;  //chrome
+$isFirefox:        true !default;  //firefox
+$isIE:             true !default;  //IE
+$prefixNo:         true !default;  //默认
+
+
+//用于在属性上加前缀
+//默认这里将只输出webkit前缀和标准
+@mixin prefix($property, $value, $prefixes: webkit) {
+    @each $prefix in $prefixes {
+        @if $prefix == webkit and $isWebkit == true {
+            -webkit-#{$property}:$value;
+        } @else if  $prefix == moz and $isFirefox == true {
+            -moz-#{$property}:$value;
+        } @else if $prefix == ms and $isIE == true {
+            -ms-#{$property}:$value;
+        }
+    }
+    @if $prefixNo {
+        #{$property}:$value;
+    }
+}
+
+//prefixer-value
+//用于在值前面加上前缀，默认这里将输出webkit前缀、moz前缀和标准
+@mixin prefixer-value($property, $value, $prefixes:webkit moz) {
+    @each $prefix in $prefixes {
+        @if $prefix == webkit and $isWebkit == true {
+            #{$property}: -webkit-#{$value};
+        } @else if $prefix == moz and $isFirefox == true {
+            #{$property}: -moz-#{$value};
+        } @else if $prefix == ms and $isIE == true {
+            #{$property}: -ms-#{$value};
+        }
+        
+        @if $prefixNo {
+            #{$property}:$value;
+        }
+        
+    }
+}
+
+
+
+//怪异盒模型box-sizing
+@mixin box-sizing($sizing:border-box) {
+    -webkit-box-sizing: $sizing;
+       -moz-box-sizing: $sizing;
+            box-sizing: $sizing;
+}
+
+//圆角border-radius
+@mixin border-radius($radius:5px) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+}
+
+//box-shadow
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+
+
+//过渡transition
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+            transition: $transition;
+}
+
+//动画
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+            transform: $transform;
+}
+
+
+
