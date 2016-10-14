@@ -122,7 +122,7 @@
                 <p>ps:工作期间其余的网站建设项目：<a href="http://www.iguxiang.org/ " target="_blank">爱故乡</a>、<a href="http://www.manyo.cn/" target="_blank">漫游网</a>、<a href="http://www.gjzjs.com/" target="_blank">北京四季雍景旅游规划设计院有限公司</a>等</p>
             </div>
             <div class="item">
-                <h4><a href="https://keira001.github.io/index" target="_blank">fontwalk</a></h4>
+                <h4><a href="javascript:;">fontwalk</a></h4>
                 <p><b>技术实现：HTML、CSS、HTML5、CSS3、javaScript</b></p>
                 <p>
                     <b>项目描述：</b><br />
@@ -133,7 +133,39 @@
 5.部分还有BUG，调整中，随时更新，谢谢关注！<br/>
                 </p>
             </div>
-           
+           <div class="item">
+                <h4><a href="https://keira001.github.io/recruit/index.html" target="_blank">招聘页面</a></h4>
+                <p><b>HTML、CSS、js</b></p>
+                <p>
+                    <b>项目描述：</b><br />                 
+					日常工作中，有很多页面点击操作后只是改变页面一部分内容，整体内容是不变的，例如翻上下页，这时候我们可以使用BOM操作window.location来实现相应的效果，这样不必新开一个html页面显示。<br /> 
+					<b>招聘类型的转换：点击切换不同的招聘类型，招聘页面显示相应信息，通常我们都是通过选项卡来实现这个效果，采用下标的方式。</b><br />
+                    难点:通过操作window.location来实现<br />
+                    解决方法：思想和选项卡相同，不同的招聘类型对应不同的window.location.search， 切换招聘类型的时候，改变并获取地址栏中的window.location.search，在json文件中不同招聘类型的数据存储也是和window.location.search相对应的的，根据所获取的window.location.search自动生成招聘信息。<br /><br />
+
+                    最开始的时候地址栏中没有window.location.search，但是自动生成页面的时候需要window.location.search，这时添加一个判断，获取不到的时候给一个默认的window.location.search<br /><br />
+
+                    <b>限定每页的信息显示数量，分页显示数据：规定每一页只显示2条数据，依此进行分页，点击每页显示相应页码的数据</b><br />
+                    解决方法：首先获取总的信息数量，除以每页显示数据个数并向上取整，这时候我们可以得到最大页码数，自动生成页码，然后每页显示信息便可以参照页码向后台请求数据<br /><br />
+
+					<b>招聘信息的页码为向上取整页码，即最后一页的数据可能会小于每页显示的最大信息数量，只显示一条</b><br /> 
+                    难点:不加处理会报错<br />
+                    解决方法：报错是因为在自动生成数据的时候找不到想要生成的数据了，所以我们要生成的信息数量要等于json文件中的数量，不能大于它。<br /><br />
+					
+                </p>
+            </div>
+            <div class="item">
+                <h4><a href="https://keira001.github.io/taobao/index.html" target="_blank">淘宝移动端首页 </a></h4>
+                <p><b>技术实现：HTML、CSS</b></p>
+                <p>
+                    <b>项目描述：</b><br />
+					1、移动端的制作时前端必备的技能之一，在移动端的制作中摒弃了PC端设置固定宽高的方法，采用rem这新的计量单位使其适配不同的移动端。<br />
+					2、通过在meta中设置minimumscale和maximum-scale以及禁止缩放来解决用户缩放使网页错乱的问题。<br />
+					3、该项目运用了css3中很多知识，例如：border-radius、-webkit-linear-gradient、-webkit-box等。特别是-webkit-box的使用，之前要实现横列的web布局，通常就是float或者display：inline-block; 但是都不能做到真正的流体布局。至少需要要自己去算宽度百分比，但-webkit-box只要给出相应属性，浏览器会帮我们做额外的计算。<br />
+					4、html5的一些列标签header、footer、figure、nav等。placeholder， input中常常会默认一些文案，当用户输入的时候会自动清除，通常是靠javascript实现，placeholder=’默认文案’会实现这个功能。<br />
+					5、采用响应式web设计，适应不同屏幕尺寸的设备，使用怪异盒模型和百分比使得代码更加简化<br />
+                </p>
+            </div>
 
             <p class="other">以上只列举了几个简单的小项目，更多的项目或者demo将会整理后放在gitHub上。</p>
         </div>
